@@ -18,7 +18,7 @@ export const coursesData = [
       ch1ep1d:"Learn about the course structure and objectives.",
       ch1ep2:"Episode 2: Getting Started",
       ch1ep2d:"Set up your development environment.",
-      ch1ep3:"Understanding Web Technologies",
+      ch1ep3:"Episode 3: Understanding Web Technologies",
       ch1ep3d:"Explore the basics of HTML, CSS, and JavaScript.",
       ch2:"Core Concepts",
       ch2d:"Dive into the key topics.",
