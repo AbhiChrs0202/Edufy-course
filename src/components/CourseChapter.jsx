@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Button,
   Card,
@@ -9,20 +9,17 @@ import {
   Typography,
   IconButton,
   Box,
-} from '@mui/material';
-import BookIcon from '@mui/icons-material/Book';
-import LayersIcon from '@mui/icons-material/Layers';
-import RocketIcon from '@mui/icons-material/Rocket';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
-import { useLocation } from 'react-router-dom';
-import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import ScrollToTop from './ScrollToTop';
+} from "@mui/material";
+import LayersIcon from "@mui/icons-material/Layers";
+import RocketIcon from "@mui/icons-material/Rocket";
+import { useLocation } from "react-router-dom";
+import VideoCameraFrontIcon from "@mui/icons-material/VideoCameraFront";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import ScrollToTop from "./ScrollToTop";
 
 function CourseChapters({ courses }) {
   const location = useLocation();
   const { course } = location.state;
-
   if (!course) return <div>Course Not Found</div>;
 
   return (
@@ -30,35 +27,40 @@ function CourseChapters({ courses }) {
       <ScrollToTop />
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Box mb={8}>
-          <Typography variant="h3" component="h1" fontWeight="bold" gutterBottom>
+          <Typography
+            variant="h3"
+            component="h1"
+            fontWeight="bold"
+            gutterBottom
+          >
             {course.title} - Course Chapters
           </Typography>
           <Typography variant="h6" color="textSecondary">
             Explore the chapters and episodes of this course.
           </Typography>
         </Box>
-        <Box sx={{ display: 'grid', gap: 4 }}>
+        <Box sx={{ display: "grid", gap: 4 }}>
           <ChapterCard
-            icon={<AutoStoriesIcon fontSize='large' />}
+            icon={<AutoStoriesIcon fontSize="large" />}
             title={course.ch1}
             description={course.ch1d}
             buttonText="Start"
             buttonVariant="contained"
           >
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch1ep1}
               description={course.ch1ep1d}
               buttonText="Watch"
             />
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch1ep2}
               description={course.ch1ep2d}
               buttonText="Watch"
             />
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch1ep3}
               description={course.ch1ep3d}
               buttonText="Watch"
@@ -66,26 +68,26 @@ function CourseChapters({ courses }) {
           </ChapterCard>
 
           <ChapterCard
-            icon={<LayersIcon fontSize='large' />}
+            icon={<LayersIcon fontSize="large" />}
             title={course.ch2}
             description={course.ch2d}
             buttonText="Unlock"
             buttonVariant="outlined"
           >
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch2ep1}
               description={course.ch2ep1d}
               buttonText="Unlock"
             />
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch2ep2}
               description={course.ch2ep2d}
               buttonText="Unlock"
             />
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch2ep3}
               description={course.ch2ep3d}
               buttonText="Unlock"
@@ -93,26 +95,26 @@ function CourseChapters({ courses }) {
           </ChapterCard>
 
           <ChapterCard
-            icon={<RocketIcon fontSize='large' />}
+            icon={<RocketIcon fontSize="large" />}
             title={course.ch3}
             description={course.ch3d}
             buttonText="Unlock"
             buttonVariant="outlined"
           >
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch3ep1}
               description={course.ch3ep1d}
               buttonText="Unlock"
             />
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch3ep2}
               description={course.ch3ep2d}
               buttonText="Unlock"
             />
             <Episode
-              icon={<VideoCameraFrontIcon fontSize='large' />}
+              icon={<VideoCameraFrontIcon fontSize="large" />}
               title={course.ch3ep3}
               description={course.ch3ep3d}
               buttonText="Unlock"
@@ -124,7 +126,14 @@ function CourseChapters({ courses }) {
   );
 }
 
-function ChapterCard({ icon, title, description, buttonText, buttonVariant, children }) {
+function ChapterCard({
+  icon,
+  title,
+  description,
+  buttonText,
+  buttonVariant,
+  children,
+}) {
   return (
     <Card>
       <CardHeader
@@ -144,11 +153,15 @@ function ChapterCard({ icon, title, description, buttonText, buttonVariant, chil
             variant={buttonVariant}
             size="large"
             sx={{
-              width: { xs: '100%', sm: '10vw' }, // Adjust button width based on screen size
+              width: { xs: "100%", sm: "10vw" },
               mt: 2,
               cursor: "pointer",
-              transition: 'transform 0.3s',
-              '&:hover': { transform: 'scale(1.06)', backgroundColor: 'primary.dark', color: 'white' }
+              transition: "transform 0.3s",
+              "&:hover": {
+                transform: "scale(1.06)",
+                backgroundColor: "primary.dark",
+                color: "white",
+              },
             }}
           >
             {buttonText}
@@ -165,7 +178,12 @@ function Episode({ icon, title, description, buttonText }) {
   return (
     <>
       <Box>
-        <Box display="flex" alignItems="center" justifyContent="space-between" py={2}>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          py={2}
+        >
           <Box display="flex" alignItems="center">
             <IconButton>{icon}</IconButton>
             <Box ml={1}>
@@ -181,11 +199,15 @@ function Episode({ icon, title, description, buttonText }) {
             size="large"
             variant="contained"
             sx={{
-              width: { xs: '100%', sm: '10vw' }, // Adjust button width based on screen size
+              width: { xs: "100%", sm: "10vw" },
               mt: 2,
               cursor: "pointer",
-              transition: 'transform 0.3s',
-              '&:hover': { transform: 'scale(1.06)', backgroundColor: 'primary.dark', color: 'white' }
+              transition: "transform 0.3s",
+              "&:hover": {
+                transform: "scale(1.06)",
+                backgroundColor: "primary.dark",
+                color: "white",
+              },
             }}
           >
             {buttonText}

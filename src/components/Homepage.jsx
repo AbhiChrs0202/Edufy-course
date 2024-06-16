@@ -30,11 +30,10 @@ export default function Homepage({ courses }) {
     navigate(`/course/${course.id}`, { state: { course } });
   };
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top on component mount
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    
     <div>
       <ScrollToTop />
       <section
