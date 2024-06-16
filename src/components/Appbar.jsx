@@ -227,18 +227,7 @@ export default function Appbar() {
               Log In
             </Button>
             <Box sx={{ flexGrow: 0.4 }} />
-            <Button
-              variant="outlined"
-              color="inherit"
-              sx={{
-                width: "7vw",
-                cursor: "pointer",
-                transition: "all 0.3s ease-in-out",
-                "&:hover": { backgroundColor: "primary.dark", color: "white" },
-              }}
-            >
-              Sign In
-            </Button>
+            
             <Box sx={{ flexGrow: 0.05 }} />
           </Toolbar>
         </AppBar>

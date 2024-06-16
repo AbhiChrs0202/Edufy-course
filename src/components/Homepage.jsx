@@ -72,21 +72,20 @@ export default function Homepage({ courses }) {
                     variant="contained"
                     color="primary"
                     sx={{
-                      fontSize: "1rem",
-                      width: "18vw",
-                      height: "100%",
+                      fontSize: "1.2rem",
+                      width: { xs: '100%', sm: "18vw" },
+                      height: { xs: 'auto', sm: "8vh" },
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      gap: '0.5rem',
                       cursor: "pointer",
-                      transition: "all 0.4s ease-in-out",
-                      "&:hover": {
-                        backgroundColor: "primary.dark",
-                        color: "white",
-                      },
                       transition: "transform 0.3s",
                       "&:hover": { transform: "scale(1.05)" },
                     }}
                   >
-                    Explore Courses{" "}
-                    <ArrowForwardIcon sx={{ fontSize: 20, ml: 2 }} />
+                    Explore Courses 
+                    <ArrowForwardIcon sx={{ fontSize: 20 }} />
                   </Button>
                 </ScrollLink>
               </div>
